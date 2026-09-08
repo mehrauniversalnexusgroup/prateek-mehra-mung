@@ -1,0 +1,844 @@
+/* =========================================================
+   MUNG FOUNDER WEBSITE — RESPONSIVE STYLES
+   Mobile-first fixes and breakpoint tuning
+   ========================================================= */
+
+/* Large desktop */
+@media (min-width: 1400px) {
+    :root { --container: 1320px; }
+}
+
+/* Tablet / small desktop */
+@media (max-width: 1199px) {
+    .container {
+        width: min(100% - 36px, 960px);
+    }
+
+    .navbar-nav {
+        gap: 0;
+    }
+
+    .nav-link {
+        padding-inline: 7px !important;
+        font-size: 11px;
+    }
+
+    .connect-btn {
+        margin-left: 8px !important;
+        padding-inline: 13px;
+    }
+
+    .hero-layout {
+        grid-template-columns: minmax(0,1fr) minmax(350px,.82fr);
+        gap: 24px;
+    }
+
+    .hero-title {
+        font-size: clamp(54px, 6.2vw, 70px);
+        letter-spacing: -4px;
+    }
+
+    .hero-image-wrapper {
+        height: 590px;
+    }
+
+    .floating-card {
+        width: 150px;
+    }
+
+    .card-one { left: 0; }
+    .card-three { left: -5%; }
+
+    .ecosystem-wrapper {
+        height: 760px;
+    }
+
+    .ecosystem-card {
+        width: 205px;
+        min-height: 285px;
+        padding: 20px;
+    }
+
+    .line-left { left: 145px; width: 160px; }
+    .line-right { right: 145px; width: 160px; }
+}
+
+@media (max-width: 991px) {
+    :root {
+        --nav-height: 70px;
+    }
+
+    .container {
+        width: min(100% - 32px, 720px);
+    }
+
+    .navbar {
+        padding: 11px 0;
+    }
+
+    .navbar-toggler {
+        display: grid;
+        place-items: center;
+    }
+
+    .navbar-collapse {
+        margin-top: 10px;
+        padding: 8px 12px 10px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: rgba(5,8,22,.97);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
+
+    .navbar-nav {
+        align-items: stretch !important;
+        gap: 2px;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 11px 9px !important;
+        border-radius: 9px;
+        font-size: 13px;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        background: rgba(0,217,255,.05);
+    }
+
+    .connect-btn {
+        width: 100%;
+        margin: 6px 0 2px !important;
+    }
+
+    .hero-section {
+        min-height: auto;
+        padding: 108px 0 70px;
+        background:
+            linear-gradient(180deg, rgba(5,8,22,.82), rgba(5,8,22,.66)),
+            url("../images/hero/hero-banner3.png") center / cover no-repeat;
+    }
+
+    .hero-layout {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 34px;
+        padding: 0;
+    }
+
+    .hero-content {
+        max-width: 720px;
+        text-align: center;
+        margin-inline: auto;
+    }
+
+    .hero-tag {
+        margin-inline: auto;
+    }
+
+    .hero-title {
+        font-size: clamp(54px, 10vw, 76px);
+        letter-spacing: -4px;
+    }
+
+    .hero-subtitle,
+    .hero-description {
+        margin-inline: auto;
+    }
+
+    .hero-buttons,
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-image-wrapper {
+        display: none;
+    }
+
+    .responsive-founder-visual {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 420px;
+        z-index: 4;
+    }
+
+    .responsive-founder-glow {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: rgba(0,217,255,.09);
+        filter: blur(65px);
+        pointer-events: none;
+    }
+
+    .responsive-founder-image {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        width: 100%;
+        max-width: 310px;
+        height: 420px;
+    }
+
+    .responsive-founder-image::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -55px;
+        width: 255px;
+        height: 255px;
+        transform: translateX(-50%);
+        border: 1px solid rgba(0,217,255,.15);
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(0,217,255,.09), transparent 70%);
+    }
+
+    .responsive-founder-image img {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 310px;
+        height: 100%;
+        object-fit: contain;
+        object-position: center bottom;
+        filter: drop-shadow(0 25px 45px rgba(0,0,0,.45));
+    }
+
+    .responsive-founder-badge {
+        position: absolute;
+        right: 0;
+        bottom: 20px;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 10px;
+        border: 1px solid rgba(0,217,255,.18);
+        border-radius: 11px;
+        background: rgba(8,15,27,.88);
+        box-shadow: 0 15px 40px rgba(0,0,0,.35);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+    }
+
+    .responsive-founder-badge .tag-dot {
+        width: 6px;
+        height: 6px;
+        flex-basis: 6px;
+    }
+
+    .responsive-founder-badge div {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.2;
+    }
+
+    .responsive-founder-badge strong {
+        color: #fff;
+        font-size: 8px;
+        font-weight: 800;
+        letter-spacing: .7px;
+    }
+
+    .responsive-founder-badge small {
+        margin-top: 3px;
+        color: var(--text-muted);
+        font-size: 7px;
+        font-weight: 600;
+    }
+
+    .scroll-indicator {
+        display: none !important;
+    }
+
+    .about-section,
+    .vision-section,
+    .leadership-section,
+    .journey-section,
+    .ecosystem-section,
+    .roadmap-section,
+    .contact-section {
+        padding: 92px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 50px;
+    }
+
+    .about-title,
+    .vision-title,
+    .leadership-title,
+    .journey-title,
+    .ecosystem-title,
+    .contact-title {
+        font-size: clamp(38px, 6vw, 48px);
+        letter-spacing: -2.2px;
+    }
+
+    .about-text,
+    .vision-text {
+        font-size: 13px;
+        line-height: 1.9;
+    }
+
+    .ecosystem-wrapper {
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        gap: 14px;
+        margin-top: 40px;
+    }
+
+    .ecosystem-center {
+        position: relative;
+        inset: auto;
+        grid-column: 1 / -1;
+        width: 190px;
+        height: 190px;
+        margin: 0 auto 16px;
+        transform: none;
+    }
+
+    .ecosystem-card,
+    .ecosystem-top,
+    .ecosystem-right,
+    .ecosystem-left,
+    .ecosystem-bottom,
+    .ecosystem-future {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        min-height: 260px;
+        transform: none !important;
+    }
+
+    .ecosystem-future {
+        grid-column: 1 / -1;
+        min-height: 210px;
+    }
+
+    .eco-line {
+        display: none;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        max-width: 720px;
+        gap: 38px;
+        margin-top: 55px;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+
+    .contact-info > p {
+        margin-inline: auto;
+    }
+
+    .contact-item {
+        justify-content: center;
+        text-align: left;
+    }
+
+    .footer-top {
+        grid-template-columns: 1.2fr 1fr 1fr;
+        gap: 32px;
+    }
+
+    .footer-connect {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Phones */
+@media (max-width: 767px) {
+    .container {
+        width: min(100% - 28px, 540px);
+    }
+
+    .grid-background {
+        background-size: 42px 42px;
+        opacity: .45;
+    }
+
+    .MUNG-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-top {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .brand-bottom {
+        margin-top: 4px;
+        font-size: 7px;
+        letter-spacing: 2.2px;
+    }
+
+    .hero-section {
+        padding: 96px 0 54px;
+    }
+
+    .hero-layout {
+        gap: 20px;
+    }
+
+    .hero-content {
+        text-align: left;
+    }
+
+    .hero-tag {
+        margin-inline: 0;
+        margin-bottom: 15px;
+        padding: 7px 10px;
+        font-size: 8px;
+        letter-spacing: 1.6px;
+    }
+
+    .hero-title {
+        font-size: clamp(43px, 14vw, 58px);
+        line-height: .92;
+        letter-spacing: -3px;
+    }
+
+    .hero-subtitle {
+        margin: 16px 0 12px;
+        font-size: 18px;
+        line-height: 1.35;
+    }
+
+    .hero-description {
+        margin-bottom: 22px;
+        font-size: 12px;
+        line-height: 1.75;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 9px;
+        margin-bottom: 28px;
+    }
+
+    .btn-primary-custom,
+    .btn-secondary-custom {
+        width: 100%;
+        min-height: 46px;
+        padding-inline: 15px;
+        font-size: 10px;
+    }
+
+    .hero-stats {
+        justify-content: flex-start;
+        gap: 17px;
+    }
+
+    .hero-stat {
+        padding-right: 17px;
+    }
+
+    .hero-stat:not(:last-child)::after {
+        height: 34px;
+    }
+
+    .hero-stat h3 {
+        font-size: 17px;
+    }
+
+    .hero-stat > span {
+        font-size: 7px;
+        letter-spacing: .7px;
+    }
+
+    .responsive-founder-visual {
+        min-height: 330px;
+    }
+
+    .responsive-founder-glow {
+        width: 230px;
+        height: 230px;
+    }
+
+    .responsive-founder-image {
+        max-width: 245px;
+        height: 330px;
+    }
+
+    .responsive-founder-image::before {
+        width: 205px;
+        height: 205px;
+        bottom: -40px;
+    }
+
+    .responsive-founder-image img {
+        max-width: 245px;
+    }
+
+    .responsive-founder-badge {
+        right: 0;
+        bottom: 10px;
+        padding: 7px 8px;
+    }
+
+    .about-section,
+    .vision-section,
+    .leadership-section,
+    .journey-section,
+    .ecosystem-section,
+    .roadmap-section,
+    .contact-section {
+        padding: 76px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 42px;
+    }
+
+    .section-heading .section-tag {
+        margin-bottom: 15px;
+    }
+
+    .about-title,
+    .vision-title,
+    .leadership-title,
+    .journey-title,
+    .ecosystem-title,
+    .contact-title {
+        font-size: clamp(32px, 9vw, 40px);
+        line-height: 1.08;
+        letter-spacing: -1.8px;
+    }
+
+    .section-heading p,
+    .leadership-description,
+    .journey-description,
+    .ecosystem-description,
+    .contact-description {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .about-content {
+        text-align: left;
+    }
+
+    .about-text,
+    .vision-text {
+        font-size: 12px;
+        line-height: 1.85;
+    }
+
+    .about-buttons {
+        gap: 15px;
+    }
+
+    .founder-card,
+    .vision-quote-card,
+    .contact-form {
+        padding: 22px;
+        border-radius: 20px;
+    }
+
+    .founder-card h3 {
+        font-size: 26px;
+    }
+
+    .founder-stats {
+        gap: 10px;
+    }
+
+    .founder-stat h4 {
+        font-size: 17px;
+    }
+
+    .founder-stat span {
+        font-size: 7px;
+    }
+
+    .founder-quote {
+        padding: 16px;
+    }
+
+    .founder-quote p {
+        font-size: 10px;
+    }
+
+    .founder-company {
+        font-size: 9px;
+    }
+
+    .vision-quote-card blockquote {
+        margin: 21px 0;
+        font-size: 19px;
+    }
+
+    .vision-points {
+        grid-template-columns: 1fr;
+    }
+
+    .leadership-card {
+        min-height: auto;
+        padding: 24px;
+    }
+
+    .leadership-card h3 {
+        font-size: 18px;
+    }
+
+    .leadership-card p {
+        font-size: 11px;
+    }
+
+    .journey-timeline {
+        margin-top: 44px;
+    }
+
+    .journey-timeline::before,
+    .roadmap-container::before {
+        left: 7px;
+        transform: none;
+    }
+
+    .journey-item,
+    .journey-item.left,
+    .journey-item.right {
+        width: 100%;
+        margin-left: 0;
+        padding: 0 0 28px 30px;
+        text-align: left;
+    }
+
+    .journey-item.left .journey-dot,
+    .journey-item.right .journey-dot {
+        left: 2px;
+        right: auto;
+        top: 18px;
+    }
+
+    .journey-card {
+        padding: 20px;
+    }
+
+    .journey-card h3 {
+        font-size: 17px;
+    }
+
+    .journey-card p {
+        font-size: 10px;
+    }
+
+    .ecosystem-wrapper {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 36px;
+    }
+
+    .ecosystem-center {
+        grid-column: auto;
+        width: 178px;
+        height: 178px;
+        margin-bottom: 8px;
+    }
+
+    .ecosystem-center h3 { font-size: 18px; }
+    .ecosystem-center h4 { font-size: 10px; }
+    .ecosystem-center h5 { font-size: 8px; }
+
+    .ecosystem-card,
+    .ecosystem-future {
+        grid-column: auto;
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .ecosystem-card p {
+        min-height: auto;
+        font-size: 10px;
+    }
+
+    .roadmap-container {
+        margin-top: 44px;
+    }
+
+    .roadmap-item {
+        display: block;
+        min-height: auto;
+        padding: 0 0 28px 30px;
+    }
+
+    .roadmap-year {
+        left: 7px;
+        top: 22px;
+        width: 38px;
+        height: 38px;
+        transform: translate(-50%,0);
+        font-size: 7px;
+    }
+
+    .roadmap-item:nth-child(odd) .roadmap-card,
+    .roadmap-item:nth-child(even) .roadmap-card {
+        margin: 0;
+    }
+
+    .roadmap-card {
+        padding: 20px;
+    }
+
+    .roadmap-card h3 {
+        font-size: 16px;
+    }
+
+    .roadmap-card p {
+        font-size: 10px;
+    }
+
+    .contact-wrapper {
+        margin-top: 45px;
+        gap: 32px;
+    }
+
+    .contact-info {
+        text-align: left;
+    }
+
+    .contact-item {
+        justify-content: flex-start;
+    }
+
+    .contact-form {
+        padding: 18px;
+    }
+
+    .form-group input {
+        height: 46px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding-inline: 13px;
+        font-size: 11px;
+    }
+
+    .contact-form button {
+        height: 46px;
+        font-size: 10px;
+    }
+
+    .footer-section {
+        padding: 56px 0 20px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 22px;
+    }
+
+    .footer-brand,
+    .footer-connect {
+        grid-column: 1 / -1;
+        max-width: none;
+    }
+
+    .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 9px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+    .container {
+        width: min(100% - 24px, 540px);
+    }
+
+    .brand-text {
+        max-width: 180px;
+    }
+
+    .brand-top {
+        font-size: 9px;
+    }
+
+    .hero-section {
+        padding-top: 90px;
+    }
+
+    .hero-title {
+        font-size: 40px;
+        letter-spacing: -2.5px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .hero-description {
+        font-size: 11px;
+    }
+
+    .hero-stat h3 {
+        font-size: 15px;
+    }
+
+    .hero-stat > span {
+        font-size: 6px;
+    }
+
+    .responsive-founder-visual {
+        min-height: 290px;
+    }
+
+    .responsive-founder-image {
+        max-width: 215px;
+        height: 290px;
+    }
+
+    .responsive-founder-image img {
+        max-width: 215px;
+    }
+
+    .responsive-founder-image::before {
+        width: 180px;
+        height: 180px;
+    }
+
+    .founder-card,
+    .vision-quote-card,
+    .contact-form {
+        padding: 19px;
+    }
+
+    .founder-stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .founder-stat {
+        padding: 0 0 10px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .founder-stat:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+    }
+}
